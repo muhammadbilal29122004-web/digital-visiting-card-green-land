@@ -1,0 +1,223 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e9ecef;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  padding: 10px;
+}
+
+.card {
+  width: min(360px, calc(100vw - 20px));
+  height: min(760px, calc(100dvh - 20px));
+  padding: 12px 10px 12px;
+  background:
+    radial-gradient(circle at 20% 12%, rgba(23, 166, 90, 0.2), transparent 38%),
+    radial-gradient(circle at 82% 58%, rgba(117, 121, 128, 0.35), transparent 50%),
+    linear-gradient(165deg, #0d6b3f 0%, #095834 35%, #0b3f2a 100%);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.06) 0%, transparent 42%),
+    radial-gradient(circle at 15% 85%, rgba(128, 133, 140, 0.24), transparent 46%);
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.logo {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  border: 3px solid rgba(18, 136, 73, 0.7);
+  background: #ffffff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.24), inset 0 0 0 2px rgba(17, 136, 72, 0.08);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  padding: 7px;
+  background: #fff;
+}
+
+.title {
+  text-align: center;
+  font-size: clamp(34px, 10vw, 58px);
+  font-weight: 700;
+  letter-spacing: 0.15px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+  line-height: 1.04;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: clamp(14px, 4.2vw, 17px);
+  color: #e4ece6;
+  font-weight: 400;
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
+
+.button {
+  height: clamp(48px, 13vw, 56px);
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: clamp(19px, 6vw, 22px);
+  font-weight: 700;
+  margin-bottom: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.34);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.button svg {
+  width: clamp(24px, 6.8vw, 30px);
+  height: clamp(24px, 6.8vw, 30px);
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.button.call,
+.button.wa {
+  background: linear-gradient(180deg, #1fc55d 0%, #0b9441 100%);
+}
+
+.services-title {
+  margin: 8px 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: clamp(24px, 7vw, 30px);
+  font-weight: 700;
+  justify-content: center;
+}
+
+.services-title::before,
+.services-title::after {
+  content: "";
+  height: 1px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0));
+  flex: 1;
+}
+
+.services {
+  border-radius: 13px;
+  background: linear-gradient(180deg, rgba(17, 87, 55, 0.95), rgba(12, 64, 41, 0.96));
+  border: 1px solid rgba(195, 206, 198, 0.38);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.36);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+  padding: 10px 4px 8px;
+  margin-bottom: 14px;
+}
+
+.service-item {
+  text-align: center;
+  color: #fff;
+}
+
+.service-item svg {
+  width: 28px;
+  height: 28px;
+  fill: #f4f7fc;
+  margin-bottom: 5px;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.35));
+}
+
+.service-item p {
+  font-size: clamp(10px, 2.9vw, 12px);
+  line-height: 1.12;
+  color: #f7fbff;
+  font-weight: 600;
+}
+
+.next-btn {
+  margin-top: auto;
+  margin-bottom: 8px;
+  height: clamp(46px, 12vw, 52px);
+  border-radius: 8px;
+  text-decoration: none;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: clamp(18px, 5.8vw, 22px);
+  font-weight: 700;
+  background: linear-gradient(180deg, #1b1f24 0%, #0f1216 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+}
+
+.next-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+@media (max-width: 420px) {
+  body {
+    padding: 6px;
+  }
+
+  .card {
+    width: 100%;
+    height: calc(100dvh - 12px);
+    padding: 10px 8px 10px;
+  }
+
+  .services {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 6px;
+    padding: 10px 8px;
+  }
+
+  .service-item svg {
+    margin-bottom: 4px;
+  }
+}
+
+@media (min-width: 421px) and (max-width: 768px) {
+  .card {
+    width: min(420px, calc(100vw - 24px));
+  }
+}
